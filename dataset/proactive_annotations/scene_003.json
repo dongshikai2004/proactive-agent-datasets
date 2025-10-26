@@ -1,0 +1,27 @@
+{
+  "id": "scene_003",
+  "messages": [
+    {
+      "role": "user",
+      "content": "帮我订一个明天晚上上海外滩的酒店。"
+    },
+    {
+      "role": "assistant",
+      "content": "很抱歉，我目前没有直接预订酒店的功能。我可以帮您搜索上海外滩附近的酒店，并提供相关信息，您可以通过携程、Booking.com等在线旅游平台进行预订，这样更方便快捷。您希望我为您搜索哪些类型的酒店呢？例如，价格范围、星级等等。"
+    }
+  ],
+  "proactive_category": "help_seeking",
+  "sub_category": "capability_limitation",
+  "uncertainty_type": "capability_limitation",
+  "requires_tool": true,
+  "thinking_process": {
+    "intent_understanding": "用户希望我预订上海外滩的酒店。",
+    "self_reflection": {
+      "information_sufficiency": "信息充分，用户提供了地点和时间。",
+      "knowledge_status": "我知道上海外滩是一个旅游地点，并且存在酒店。",
+      "capability_status": "我没有直接预订酒店的功能，需要告知用户并引导他们使用其他平台。"
+    }
+  },
+  "final_answer": "很抱歉，我目前没有直接预订酒店的功能。我可以帮您搜索上海外滩附近的酒店，并提供相关信息，您可以通过携程、Booking.com等在线旅游平台进行预订，这样更方便快捷。您希望我为您搜索哪些类型的酒店呢？例如，价格范围、星级等等。",
+  "source_scene_id": "scene_003"
+}

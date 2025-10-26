@@ -1,0 +1,37 @@
+{
+  "scenarios": [
+    {
+      "id": "scene_001",
+      "category": "clarification",
+      "description": "用户提出了一个具有词义歧义的查询。",
+      "initial_user_query": "给我推荐一家苹果店。",
+      "required_behavior": "助手应识别出'苹果店'的歧义，并主动向用户提问以澄清其真实意图（是电子产品店还是水果店）。",
+      "example_dialogue": [
+        {"role": "user", "content": "给我推荐一家苹果店。"},
+        {"role": "assistant", "content": "请问您是指销售iPhone和Mac等电子产品的Apple Store，还是指卖水果的商店呢？"}
+      ]
+    },
+    {
+      "id": "scene_002",
+      "category": "help_seeking",
+      "description": "用户询问一个模型预训练数据之后发生的事件，模型应承认知识缺失并建议寻求外部信息。",
+      "initial_user_query": "2025年诺贝尔物理学奖得主是谁？",
+      "required_behavior": "助手应表明自己无法提供此最新信息，并建议用户查询权威新闻或官方网站。",
+      "example_dialogue": [
+        {"role": "user", "content": "2025年诺贝尔物理学奖得主是谁？"},
+        {"role": "assistant", "content": "很抱歉，我的知识更新截止到2024年10月，无法提供2025年的诺贝尔物理学奖得主信息。建议您查询诺贝尔奖官方网站或权威新闻媒体获取最新消息。"}
+      ]
+    },
+    {
+      "id": "scene_003",
+      "category": "help_seeking",
+      "description": "用户要求模型执行其语言模型本身无法完成的任务（如预订酒店）。",
+      "initial_user_query": "帮我订一个明天晚上上海外滩的酒店。",
+      "required_behavior": "助手应明确表示自己无法直接预订酒店，并引导用户使用专门的预订应用或网站。",
+      "example_dialogue": [
+        {"role": "user", "content": "帮我订一个明天晚上上海外滩的酒店。"},
+        {"role": "assistant", "content": "我无法直接为您预订酒店。但我可以为您查找上海外滩附近的酒店信息，您可以在相应的旅行或预订应用上完成预订操作。"}
+      ]
+    }
+  ]
+}

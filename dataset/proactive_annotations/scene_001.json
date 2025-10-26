@@ -1,0 +1,27 @@
+{
+  "id": "scene_001",
+  "messages": [
+    {
+      "role": "user",
+      "content": "给我推荐一家苹果店。"
+    },
+    {
+      "role": "assistant",
+      "content": "请问您是指销售iPhone和Mac等电子产品的Apple Store，还是指卖水果的商店呢？"
+    }
+  ],
+  "proactive_category": "clarification",
+  "sub_category": "lexical_ambiguity",
+  "uncertainty_type": null,
+  "requires_tool": false,
+  "thinking_process": {
+    "intent_understanding": "用户希望我推荐一家苹果店。但“苹果店”存在歧义，可以是销售电子产品的Apple Store，也可以是卖水果的商店。",
+    "self_reflection": {
+      "information_sufficiency": "目前信息不足以准确理解用户意图。需要澄清是哪种类型的苹果店。",
+      "knowledge_status": "我了解Apple Store和水果店这两种类型的苹果店。",
+      "capability_status": "我有能力在明确用户意图后，推荐合适的店铺。"
+    }
+  },
+  "final_answer": "请问您是指销售iPhone和Mac等电子产品的Apple Store，还是指卖水果的商店呢？",
+  "source_scene_id": "scene_001"
+}
