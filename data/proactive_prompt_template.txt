@@ -13,7 +13,7 @@
 1.  对话必须自然、流畅，符合人类语言习惯。
 2.  助手的回复必须体现其主动行为（如澄清、寻求帮助）。
 3.  thinking_process 字段必须包含意图理解、信息充分性检查、知识状态检查和能力状态检查。
-4.  sub_category 应根据场景选择合适的细分类型，如 'lexical_ambiguity', 'epistemic_uncertainty', 'capability_limitation' 等。
+4.  sub_category 应根据场景选择合适的细分类型:['contextual_ambiguity', 'epistemic_uncertainty', 'capability_limitation']
 5.  uncertainty_type 仅在 'help_seeking' 类别中填写，否则为 null。
 6.  requires_tool 为布尔值，表示对话是否最终需要调用外部工具。
 
