@@ -18,18 +18,21 @@ def process_single_record(record):
     """
     # 获取用户消息
     user_message = None
+    agent_message=None
     for msg in record["messages"]:
         if msg["role"] == "user":
             user_message = msg["content"]
-            break
+        else:
+            agent_message=msg['content']
     
     if not user_message:
         return None
     
     # 构建prompt
-    prompt = f"""请分析以下用户请求，并按照指定格式回复：
+    prompt = f"""请分析以下请求，并按照指定格式回复：
 
-用户请求：{user_message}
+用户请求:{user_message}
+需修改的回复:{agent_message}
 
 请按照以下格式回复：
 <think>
@@ -38,7 +41,7 @@ def process_single_record(record):
 <perplexity>
 如果存在无法直接完成的部分，在这里说明原因
 </perplexity>
-final_answer
+final_answer:
 
 要求：
 1. think部分要详细分析用户请求的三个部分
@@ -48,7 +51,7 @@ final_answer
     try:
         # 调用Gemini API
         response = client.models.generate_content(
-            model="gemini-2.0-flash-exp",
+            model="gemini-2.0-flash",
             contents=prompt
         )
         

@@ -68,7 +68,7 @@ def convert_to_perplexity_training_format(input_file_path, output_file_path, too
                 user_message = {"role": "user", "content": query_text}
                 
                 # Perplexity message - includes parameter details
-                assistant_content = f"<think></think>\n<perplexity>As an LLM, I lack the capability to directly {', and '.join(required_capabilities_details)}. I would need access to specific tools or APIs to fulfill this request.</perplexity>\n"
+                assistant_content = f"<think></think>\n<perplexity>As an LLM, I lack the capability to directly {', and '.join(required_capabilities_details)}. I would need access to specific tools or APIs to fulfill this request.</perplexity>\nfinal_answer:"
                 assistant_message = {"role": "assistant", "content": assistant_content}
 
                 messages = [user_message, assistant_message]
