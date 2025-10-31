@@ -16,37 +16,26 @@ def process_single_record(record):
     """
     处理单条记录，生成think和final_answer
     """
-    # 获取用户消息
-    user_message = None
-    agent_message=None
-    for msg in record["messages"]:
-        if msg["role"] == "user":
-            user_message = msg["content"]
-        else:
-            agent_message=msg['content']
-    
-    if not user_message:
-        return None
-    
     # 构建prompt
-    prompt = f"""请分析以下请求，并按照指定格式回复：
+    prompt = f"""请分析历史对话和用户最后的请求，并按照指定格式回复：
 
-用户请求:{user_message}
-需修改的回复:{agent_message}
+历史对话:{record["messages"][:-2]}
+用户最后的请求:{record["messages"][-2]["content"]}
+需修改的回复:{record["messages"][-1]["content"]}
 
 请按照以下格式回复：
 <think>
-你的思考过程，分析用户请求的各个部分，识别哪些是你能做的，哪些需要特定工具或权限
+你的思考过程,分析用户请求的各个部分,识别哪些是清晰的,哪些是模糊的
 </think>
 <perplexity>
-如果存在无法直接完成的部分，在这里说明原因
+如果存在无法模糊的部分，在这里说明你不理解什么
 </perplexity>
 final_answer:
 
 要求：
-1. think部分要详细分析用户请求的三个部分
+1. think部分要详细分析用户请求的模糊性
 2. perplexity部分说明无法完成的具体原因
-3. final_answer要使用友好的中文说明无法直接完成，并提供替代帮助"""
+3. final_answer要使用友好的中文说明无法直接完成"""
 
     try:
         # 调用Gemini API
@@ -123,8 +112,8 @@ def process_jsonl_file(input_file, output_file):
 # 示例使用
 if __name__ == "__main__":
     # 输入文件路径
-    input_file = "src/convert/tools_need/input.jsonl"
-    output_file = "src/convert/tools_need/output.jsonl"
+    input_file = "src/convert/ambiguity/abg-coqa/input.jsonl"
+    output_file = "src/convert/ambiguity/abg-coqa/output.jsonl"
     processed_data = process_jsonl_file(input_file, output_file)
     
     # 打印处理结果示例
