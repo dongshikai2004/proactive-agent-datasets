@@ -1,0 +1,34 @@
+[
+    {
+        "id": "tc_1",
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which American-born Sinclair won the Nobel Prize for Literature in 1930?"
+            },
+            {
+                "role": "assistant",
+                "content": "<think>模型在 10 次提问中答对了 10 次，正确率达到 100%，超过了 70% 的阈值。可以认为它具备相关知识。</think>\n<perplexity></perplexity>\nSinclair Lewis"
+            }
+        ],
+        "proactive_category": "ambiguity/knowledge_gap/tool_need",
+        "sub_category": "",
+        "source_id": ""
+    },
+    {
+        "id": "tc_3",
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where in England was Dame Judi Dench born?"
+            },
+            {
+                "role": "assistant",
+                "content": "<think>模型在 10 次提问中仅答对了 0 次，正确率只有 0%，低于 70% 的阈值。可以认为它不具备相关知识。</think>\n<perplexity>模型似乎缺乏关于 'Where in England was Dame Judi Dench born?' 的相关知识。</perplexity>\n模型不具备回答此问题的相关知识。"
+            }
+        ],
+        "proactive_category": "ambiguity/knowledge_gap/tool_need",
+        "sub_category": "",
+        "source_id": ""
+    }
+]
